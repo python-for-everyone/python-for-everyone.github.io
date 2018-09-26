@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+        <h2 style = "text-align:center"> Inheritance </h2>
+  <p> In this chapter we'll be addressing inheritance. </p>
+  <p> This is the true magic of object oriented programming.  </p>
+  <p> Inheritance allows you to reuse you code and to centrally maintain your code. </p>
+    <p> I'll be using the same example as in the previous chapter, but a few minor changes might occur.</p>
+    <br>
+    <p style ="font-size:120%"> 1.1 Concept </p>
+    <p> Let me bring you a little closer to the concept of Data Encapsulation. </p>
+    <p> Data Encapsulation means that instances created in a specific class can only call methods in the same class as the instance.</p>
+    <p> These methods can in turn only access attribute values of objects that are "stored" in the same class. </p>
+    <p> The attribute values of objects can only be "stored" if a constructor exists in the class. </p>
+    <p> <b> Example: </b> If you create an instance in class A, then you can only access the methods in class A.</p>
+    <p> If we would want to access the methods in Class B, then we would get an error. </p>
+    <p> <b> Remember: Classes are generally isolated (except for Inheritance). </b> </p>
+    <br>
+    <p style ="font-size:120%"> 1.2 Forms </p>
+        <p style ="font-size:120%"> 1.2.1 Single </p>
+    <p> Now back to our example from the previous chapter.</p>
+    <p> If we would want to have two separate classes called <b>Dog</b> and <b>Cat</b> with the same attributes and methods as in our <b> Animal </b> class, then the two classes <b> Dog </b> and <b> Cat </b> can inherit from the <b>Animal</b> class. </p>
+    <p> In the class <b>Animal</b> we define the attributes and methods that the two class have in common. </p>
+    <p> If you now want to add attribute(s) and method(s) that are specific to a subclass, then you can do that by defining them in the subclass. </p>
+    <p> <b> Example: </b>
+    <p> <b> Attributes: </b> Number of legs, color of eyes and skin color. </p>
+    <p> <b> Methods:</b> get_n_o_legs, get_skin_col, get_color_eyes. </p>
+        <p> These exist in both of our subclasses (<b>Dog</b>, <b>Cat</b>) since we inherited from the <b> Animal </b> class.  </p>
+    <p> If we now would want to add an attribute and a method that only applies to Dog such as color of collar & get_color_of_collar, then we can do this by defining it in the Dog class. </p>
+    <p> The same could be done for the Cat class. If a cat would have an attribute and a method that only applies to them, then we can do this by defining it in the Cat class. </p>
+    <p> This approach is called <b> Generalization </b> &#8680; <b> Specialization. </b> </p>
+    <br>
+    <p style ="font-size:120%"> 1.2.2 Multi-Level</p>
+    <p> Same Situation as before. </p>
+    <p> We have a class called <b>Animal</b> and two subclasses called <b> Dog </b> and <b>Cat.</b> </p>
+    <p> This time I'll be using different attributes for the subclasses!</p>
+    <p> Dog inherits from the class called <b> Animal</b> and in the <b>Dog</b> class we add an attribute and a method called Weight & get_Weight. </p>
+    <p> If we now want to have the same attributes and methods from the Dog class in our Cat class, then we need to inherit from our Dog class. </p>
+    <p> The approach is called Multi-level, because the <b> Cat </b> class inherits from the <b> Dog </b> class and the <b> Dog </b> class inherits from the <b>Animal</b> class.</p>
+    <br>
+    <p style ="font-size:120%"> 1.2.3 Multiple </p>
+    <p> I am sorry guys! I couldn't think of an example with multiple inheritance for our current example. </p>
+    <p> Here's the new example: </p>
+    <p> Imagine that we have two classes called <b> Grades </b> and <b> Students </b> and a class called <b> Persons </b> which inherits from both classes.</p>
+    <p> In the class <b> Grades </b> we have the grades of all students currently in school.
+        <p> The class furthermore has following attributes: Math, Science, English.
+        <p> The methods of the class are the following: get_math, get_science, get_english. </p>
+    <p> In the class <b> Students </b> we are recording the students respective grade and homeroom teacher.
+        <p> The class has the following attributes: Grade, Homeroom Teacher.
+        <p> The class furthermore has the following methods: get_grade, get_homeroom_teacher. </p>
+    <p> We now inherit from the Classes <b> Grades </b> and <b> Students </b>.</p>
+    <p> The approach is called Multiple inheritance, because we inherit from two classes at the same time. </p>
+
+    <p> Multiple inheritance is used when the classes under each other don't relate, whereas multi-level inheritance is used when the classes under each relate. </p>
+    <p> Example: It wouldn't make much sense for the class <b> Students </b> to inherit from <b>Grades</b>, because we only want to have the same attributes and methods of the two classes in one class called <b> Person. </b> </p>
+
+    <p style ="font-size:120%"> 1.3 Polymorphy </p>
+    <p> Polymorphy is a fancy Greek word for two identical things with different manifestations. </p>
+    <p> In Python that means that two methods that have the exact same name act differently in nature. </p>
+
+  <br>
+
+  <p> <b> Example: </b> </p>
+
+  <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+
+src="http://pythontutor.com/iframe-embed.html#code=class%20Animal%20%28object%29%3A%0A%20%20%20%20def%20__init__%28self,%20number_of_legs,%20color_of_eyes,%20skin_color%29%3A%0A%20%20%20%20%20%20%20%20self.legs%20%3D%20number_of_legs%0A%20%20%20%20%20%20%20%20self.color%20%3D%20color_of_eyes%0A%20%20%20%20%20%20%20%20self.skin%20%3D%20skin_color%0A%20%20%20%20def%20get_n_o_legs%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.legs%0A%0A%20%20%20%20def%20get_skin_col%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.color%0A%0A%20%20%20%20def%20get_color_eyes%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.skin%0A%0Aclass%20Dog%20%28Animal%29%3A%0A%20%20%20%20def%20__init__%28self,number_of_legs,color_of_eyes,skin_color,color_of_collar%29%3A%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28number_of_legs,color_of_eyes,skin_color%29%0A%20%20%20%20%20%20%20%20self.collar%20%3D%20color_of_collar%0A%20%20%20%20def%20get_color_of_collar%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.collar%0A%0Aclass%20Cat%28Animal%29%3A%0A%20%20%20%20pass%0A%0A%0AStani%20%3D%20Dog%284,%22Blue%22,%22Brown%22,%22Gray%22%29%0A%0Aprint%20%28Stani.get_color_of_collar%28%29%29%0Aprint%20%28Stani.get_color_eyes%28%29%29%0A%0A%0AMitsy%20%3D%20Cat%20%284,%22Blue%22,%22White%22%29%0Aprint%20%28Mitsy.get_n_o_legs%28%29%29%0A%0A%23---------------------------------------------------------------------------------------------------------------------%0A%0Aclass%20Animal%20%28%29%3A%0A%0A%20%20%20%20def%20__init__%28self,%20number_of_legs,%20color_of_eyes,%20skin_color%29%3A%0A%20%20%20%20%20%20%20%20self.legs%20%3D%20number_of_legs%0A%20%20%20%20%20%20%20%20self.color%20%3D%20color_of_eyes%0A%20%20%20%20%20%20%20%20self.skin%20%3D%20skin_color%0A%20%20%20%20def%20get_n_o_legs%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.legs%0A%0A%20%20%20%20def%20get_skin_col%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.color%0A%0A%20%20%20%20def%20get_color_eyes%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.skin%0A%0A%0Aclass%20Dog%20%28Animal%29%3A%0A%20%20%20%20def%20__init__%28self,number_of_legs,color_of_eyes,skin_color,weight%29%3A%0A%20%20%20%20%20%20%20%20super%28%29.__init__%28number_of_legs,color_of_eyes,skin_color%29%0A%20%20%20%20%20%20%20%20self.weight%20%3D%20weight%0A%0A%20%20%20%20def%20get_weight%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.weight%0A%0Aclass%20Cat%28Dog%29%3A%0A%20%20%20%20pass%0A%0AMitsy%20%3D%20Cat%284,%22Blue%22,%22Brown%22,%225kg%22%29%0A%0Aprint%20%28Mitsy.get_n_o_legs%28%29%29%0Aprint%20%28Mitsy.get_weight%28%29%29%0A%0A%23---------------------------------------------------------------------------------------------------------------------%0A%0Aclass%20Grades%28object%29%3A%0A%20%20%20%20def%20__init__%28self,Math,Science,English%29%3A%0A%20%20%20%20%20%20%20%20self.Math%20%3D%20Math%0A%20%20%20%20%20%20%20%20self.Science%20%3D%20Science%0A%20%20%20%20%20%20%20%20self.English%20%3D%20English%0A%0A%20%20%20%20def%20get_math%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.Math%0A%20%20%20%20def%20get_science%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.Science%0A%20%20%20%20def%20get_english%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.English%0A%0Aclass%20Students%28object%29%3A%0A%20%20%20%20def%20__init__%28self,Grade,%20Homeroom_Teacher%29%3A%0A%20%20%20%20%20%20%20%20self.grade%20%3D%20Grade%0A%20%20%20%20%20%20%20%20self.homeroom_teacher%20%3D%20Homeroom_Teacher%0A%0A%20%20%20%20def%20get_grade%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.grade%0A%20%20%20%20def%20get_homeroom_teacher%20%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.homeroom_teacher%0A%0A%0Aclass%20Persons%20%28Grades,Students%29%3A%0A%0A%20%20%20%20def%20__init__%28self,Math,Science,English,Grade,Homeroom_Teacher%29%3A%0A%20%20%20%20%20%20%20%20Grades.__init__%28self,Math,Science,English%29%0A%20%20%20%20%20%20%20%20Students.__init__%28self,Grade,Homeroom_Teacher%29%0A%0ALinus%20%3D%20Persons%285,1,6,12,%20%22Mr.Rasmussen%22%29%0A%0Aprint%28Linus.get_english%28%29%29%0Aprint%20%28Linus.get_grade%28%29%29%0A%0A%23----------------------------------------------------------------------------------------------------------%0A%0Aclass%20Animal%20%28object%29%3A%0A%20%20%20%20def%20sound%28self%29%3A%0A%20%20%20%20%20%20%20%20print%20%28'This%20Animal%20makes%20a%20generic%20sound'%29%0A%0Aclass%20Dog%20%28object%29%3A%0A%20%20%20%20def%20sound%20%28self%29%3A%0A%20%20%20%20%20%20%20%20print%20%28'Wuuuf'%29%0A%0AStani%20%3D%20Dog%28%29%0A%0AStani.sound%28%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+
+  </iframe>
+
+
+    <p> PC:</p>
+
+    <p> <a href="Python Demonstration - Inheritance.py"> Click on me </a> </p>
+
+    </div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+

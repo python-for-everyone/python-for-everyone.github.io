@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fundamentals of Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+
+        <h2 style="text-align:center"> Fundamentals of Python </h2>
+    <p> Today I would like to give you an overview of the very fundamentals of Python.</p>
+    <p style ="font-size:120%" > 1.1 Fundamentals </p>
+    <p> In Python you can choose between different types of operators. </p>
+    <p> Operators enable you to operate on operands. </p>
+  <p> Still there? If you didnt understand it, then i'll explain it to you again! </p>
+    <p> <b> Example: </b>  2 + 2. </p>
+    <p> The two values are the operands and the "+" sign is the operator. </p>
+    <br>
+    <p style ="text-align:center" > <b> Table 1: </b> Possible operators in Python.  </p>
+
+    <table align="center">
+            <tr>
+                <th style="font-size:100%;text-align:center;background-color:#4caf50"> Operators </th>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%" > Int.division = // </td>
+
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%" > Exponent = ** </td>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%" > Modulus = % </td>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%" > Division = / </td>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%" > Multiplication = * </td>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%"> Addition = + </td>
+            </tr>
+            <tr>
+                <td style ="text-align:center;background-color:white;font-size:100%"> Subtraction = - </td>
+            </tr>
+        </table>
+    <br>
+
+    <p style ="font-size:120%" > 1.2 Data Types </p>
+    <p> Every value in Python has a data type. </p>
+
+    <p> The most common data types are: Integers, Float and Strings. </p>
+
+    <p> You can recognize an integer by it's whole number (for example 3). </p>
+
+    <p> On the other hand a float number can have decimal places (for example 3.14). </p>
+    <p> Strings are characterized by their quotation marks (for example 'Linus'). </p>
+    <p> <b> Remember: An integer can never have decimal places! </b> </p>
+    <br>
+    <p style ="font-size:120%" > 1.3 Concatenation </p>
+    <p> Another important feature in Python is that strings can be concatenated. </p>
+    <p> <b> Example: </b> 'Linus' + 'Kenneth' = LinusKenneth.</p>
+    <p> <b> Remember: One String can not be concatenated with an integer value. This will throw an error!</b> </p>
+    <br>
+    <p style ="font-size:120%" > 1.4 Variables </p>
+    <p> Variables are used to store values in them which then are used for further processing. </p>
+    <p> You assign a value to a variable with the equal sign. </p>
+    <p> <b> Example: </b> Linus = 22. I assigned 22 to the variable called "Linus". </p>
+    <p> <b> Remember: Variables can only consist of letters, numbers and underscores! </b></p>
+    <br>
+    <p style ="font-size:120%" > 1.5 Functions </p>
+    <p> With the print function you can display the content inside your print statement.</p>
+    <p> <b> Example: </b> print ("Hello World") will print Hello World on your screen. Cool, ey? 😄 </p>
+    <p> The input function demands an input from the user. </p>
+    <p> <b> Example </b> age = input() forces the user to enters a value in the terminal. </p>
+    <p> The len function is another handy function. With this function you can determine the length of a string. </p>
+    <p> <b> Example: </b> len ('hello') will return 5 since the string has 5 letters. </p>
+        <p style ="font-size:120%" > 1.6 Others </p>
+        <p> You can add a comment with a #. </p>
+    <p> This is very useful for understanding the code at a different point in time. </p>
+    <br>
+
+    <p> <b> Example: </b> </p>
+
+    <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+    src="http://pythontutor.com/iframe-embed.html#code=variable_x%20%3D%20'Linus'%0Aprint%20%28variable_x%29%0A%0Agrade%20%3D%20input%28'Enter%20your%20grade%20here%3A%20%20'%29%0A%0Aprint%28len%28variable_x%29%29%0A%0Aprint%28'Linus'%20%2B%20'Mattias'%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+</iframe>
+
+    <p> PC:</p>
+
+    <p> <a href="Python Demonstration - Fundamentals of Python.py"> Click on me</a> </p>
+</div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+         <h2 style = "text-align:center"> Functions </h2>
+  <p> In the first chapter called Fundamentals of Python we briefly covered some functions in Python. </p>
+    <p> The amazing thing is that Python is not only bound to these functions. </p>
+    <p> Python offers a range of functions where some of them will be covered in this chapter.</p>
+    <p> At this point, you are probably asking yourself what a function.</p>
+    <p> Well, a function is a mini-program inside your actual program. Nothing more and nothing less. </p>
+    <br>
+    <p style ="font-size:120%"> 1.1 Def </p>
+    <p> With the def function you can define your own function. </p>
+    <p> The line(s) of code are the foundation of your function. </p>
+    <p> The function is only executed when it's called. </p>
+    <p> You define a function in Python with the keyword Def. </p>
+    <p> With functions you also have the possibility to include argument(s) and parameter(s). </p>
+    <p> Argument(s) are given to the parameter when the function is called. </p>
+    <p> Parameters receive the argument(s) which then internally can be used in the function.  </p>
+    <p> After the function has been called the parameter values get destroyed. </p>
+    <p> The main advantages of using functions are that you avoid repeating yourself in your program and that you don't have to change the code at every point in your program, if you made a mistake or forgot something.</p>
+    <br>
+    <p style ="font-size:120%"> 1.2 Return </p>
+    <p> The return function returns a value to the place where the function has been called. </p>
+    <p> This function comes in very handy when you are using your defined functions! </p>
+    <p> You define a return function in Python with the keyword return.</p>
+    <p> If you don't use the return function in your defined function, then Python will return the value None.</p>
+    <p> None is used when you don't want to save a real value inside your variable, because every variable needs to hold a value.</p>
+    <br>
+    <p  style="font-size:120%"> 1.3 End and Sep </p>
+    <p> With the end keyword you can make the values in the two print functions fit into a single line. </p>
+    <p> With the sep keyword you can separate multiple values in your print function with a delimiter. </p>
+    <br>
+    <p  style="font-size:120%"> 1.4 Scope </p>
+    <p> Local variables only exist within functions, whereas global variables exist outside of the function. </p>
+    <p> Local variables are non-existent after the function where the variables are in has been called. </p>
+    <p> Global variables are destroyed when the entire program has been executed. </p>
+    <p> Code in the global scope can't use local variables. </p>
+    <p> On the other hand the local scope can use and modify global variables. </p>
+    <p> Local scope code can't access other local scope code. </p>
+    <p> In Python you can have two variables with the same name, if they both have different scopes.</p>
+    <p> Many experienced programmers will try to limit the use of global variable, since they can be modified by every function in your program. </p>
+    <p> If you really have to use global variable inside of function, please put global in front of it. </p>
+    <br>
+    <p style="font-size:120%"> 1.5 Exception</p>
+    <p> Python will terminate your program, if there's an error. </p>
+    <p> To avoid this from happening you can use exception handling. </p>
+    <p> Python will continue with the rest of your program until the execution is done. </p>
+    <br>
+        <p> <b> Example: </b> </p>
+
+    <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+    src="http://pythontutor.com/iframe-embed.html#code=print%20%28'Hello'%29%0Aprint%20%28'My'%29%0Aprint%20%28'Website'%29%0Aprint%20%28'Viewers'%29%20%0Aprint%20%28'Hello'%29%0Aprint%20%28'My'%29%0Aprint%20%28'Website'%29%0Aprint%20%28'Viewers'%29%20%0Aprint%20%28'Hello'%29%0Aprint%20%28'My'%29%0Aprint%20%28'Website'%29%0Aprint%20%28'Viewers'%29%20%0A%0Adef%20function%20%28%29%3A%0A%20%20%20%20print%20%28'Hello'%29%0A%20%20%20%20print%20%28'My'%29%0A%20%20%20%20print%20%28'Website'%29%0A%20%20%20%20print%20%28'Viewers'%29%20%0A%0Aprint%20%28function%28%29%29%0Aprint%20%28function%28%29%29%0Aprint%20%28function%28%29%29%0A%0A%23---------------------------------------------------------------------------%0A%0A%0Adef%20function_new%28football_team%29%3A%20%0A%20%20%20%20return%20%20football_team%0Aprint%28function_new%28'Bayern%20Munich'%29%29%20%0A%0A%0Adef%20function_new2%28%29%3A%0A%20%20%20%20print%20%28'Hello'%29%0Aprint%20%28function_new2%28%29%29%20%0A%0A%23------------------------------------------------------------------------------------------------------------------------%0A%0Aprint%20%28'Hello'%29%20%0Aprint%20%28'Linus'%29%0A%0Aprint%20%28'Hello',%20end%3D''%29%0Aprint%20%28'Linus'%29%0A%0Aprint%20%28'Linus','Likes','Bayern%20Munich'%29%0A%0Aprint%20%28'Linus','Likes','Bayern%20Munich',%20sep%3D','%29%0A%0A%23------------------------------------------------------------------------------------------------------------------------%0A%0Aa%20%3D%205%20%0A%0A%22%22%22%0A%20def%20function_new3%28%29%3A%0A%20%20%20%20b%20%3D%205%0Aprint%20%28b%29%20%0A%22%22%22%0A%23COMMENT%20IN%20FUNCTION_NEW3%20TO%20SEE%20EFFECT!%0A%0A%0Adef%20function_new4%28%29%3A%20%20%0A%20%20%20%20global%20a%20%20%0A%20%20%20%20a%20%3D%207%20%20%20%20%0A%0Aprint%28function_new4%28%29%29%0A%0Aprint%20%28a%29%20%0A%0Adef%20function_new5%28%29%3A%0A%20%20%20%20print%28b%29%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%0Adef%20function_new6%28%29%3A%0A%20%20%20%20b%20%3D%205%0A%0A%0Adef%20function_new7%28%29%3A%0A%20%20%20%20a%20%3D%205%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%0A%23------------------------------------------------------------------------------------------------------------------------%0A%0Adef%20function_new8%28x%29%3A%0A%20%20%20%20try%3A%0A%20%20%20%20%20%20%20%20return%2020/x%0A%20%20%20%20except%20ZeroDivisionError%3A%0A%20%20%20%20%20%20%20%20return%20%28'You%20cant%20divide%20by%20Zero'%29%0A%0Aprint%28function_new8%282%29%29%0Aprint%28function_new8%280%29%29%20%0Aprint%28function_new8%281%29%29%20%0A%0A%0A%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+</iframe>
+  <p> PC: </p>
+
+    <p> <a href="Python Demonstration - Functions.py"> Click on me </a> </p>
+
+
+    </div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+

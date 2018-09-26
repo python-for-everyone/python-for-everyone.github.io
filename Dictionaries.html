@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionaries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+        <h2 style ='text-align:center'>Dictionaries</h2>
+  <p> Today I would like to give an overview of Dictionaries in Python. </p>
+  <p>Dictionaries are a very important concept in Python and will save you some time while coding.</p>
+    <br>
+    <p style="font-size:120%"> 1.1 Concept</p>
+  <p>This chapter will be shorter than the rest of the chapters, but don't underestimate the importance of dictionaries. </p>
+    <p> Dictionaries consist of keys and values. For that reason dictionaries are called key-value pairs. </p>
+    <p> The indices (the values in the dictionary) can be of any data type (integers,strings and floats). </p>
+    <p> Dictionaries are mainly used to organize the data and thereupon access this data.   </p>
+    <br>
+    <p style = "font-size:120%" > 1.2 Methods </p>
+    <p> Method is synonymous to function. Please don't get confused, because of the "unfamiliar" word! </p>
+    <p> If you remember what we did in chapter conditions, then this will sound familiar to you. </p>
+    <p> With the for loop you can iterate (loop over) values in the dictionary.</p>
+    <p> The for loop with the method values() allows you to iterate over all the values in the dictionary. </p>
+    <p> On the hand the hand the for loop with the method keys() allows you to iterate over all the keys in the dictionary.</p>
+    <p> Last but not least the for loop with the method items () delivers all the key-value pairs in the dictionary.</p>
+    <p> Those were three very important methods when it comes dictionary, but there are two further important methods. </p>
+    <p> The get() method takes two arguments: the key that you are searching for and a value that should be returned if the key doesn't exist.</p>
+    <p> The get() comes in handy, if you have a long dictionary and you're looking for a certain key. </p>
+    <p> The last method which I'll be explaining is the setdefault().</p>
+    <p> The setdefault method is similar to the get method. </p>
+    <p> Setdefault takes two arguments: the key that you are looking for and the value you want to set, if the key doesn't already exist.</p>
+    <p> If the key already exists, then setdefault will return the value for the respective key. </p>
+    <br>
+    <p style = "font-size:120%" > 1.3 Manipulation </p>
+    <p> You can add a key-value pair to a dictionary by following this system: name_d["name_k"] = "name_v". </p>
+    <p> You can delete a key-value from dictionary by following this system: name_d["name_k"]. </p>
+
+  <br>
+
+  <p> <b> Example: </b> </p>
+
+    <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+    src="http://pythontutor.com/iframe-embed.html#code=%0A%0Afootball_club_fc%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Kevin%22%3A22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Paduk%22%3A21,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Bastian%22%3A20,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Leonard%22%3A23,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Maximilian%22%3A19,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Tobias%22%3A22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Ahmed%22%3A24,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Andreas%22%3A21,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Mattias%22%3A22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Toni%22%3A23,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Thomas%22%3A21%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%23----------------------------------------------------------------------------------------------------------------------%0A%0Afor%20x%20in%20football_club_fc.values%28%29%3A%0A%20%20%20%20print%28x%29%0A%0Afor%20x%20in%20football_club_fc.keys%28%29%3A%0A%20%20%20%20print%28x%29%0A%0Afor%20x,v%20in%20football_club_fc.items%28%29%3A%0A%20%20%20%20print%28x,%20end%3D%22,%22%29%0A%20%20%20%20print%28v%29%0A%0Aprint%28football_club_fc.get%28%22Cristiano%22,'Its%20just%20a%20rumour'%29%29%0A%0Aprint%20%28football_club_fc.setdefault%28%22Kevin%20Artenga%22,%2224%22%29%29%0A%0Afor%20x,v%20in%20football_club_fc.items%28%29%3A%0A%20%20%20%20print%28x,v%29%0A%0A%23--------------------------------------------------------------------------------------------------------------------------%0A%0Afootball_club_fc%5B%22Kenneth%20Zimbabwe%22%5D%20%3D%2024%0A%0Afor%20x,v%20in%20football_club_fc.items%28%29%3A%0A%20%20%20%20print%28x,v%29%0A%0Adel%20football_club_fc%5B%22Kenneth%20Zimbabwe%22%5D%0A%0Afor%20x,v%20in%20football_club_fc.items%28%29%3A%0A%20%20%20%20print%28x,v%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+</iframe>
+
+  <p> PC: </p>
+
+    <p> <a href="Python Demonstration - Dictionaries.py"> Click on me </a> </p>
+
+</div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

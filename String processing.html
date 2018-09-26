@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String Processing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+        <h2 style="text-align:center"> String Processing </h2>
+  <p> In this chapter we will be covering useful methods and tricks when working with strings. </p>
+    <br>
+        <p style ="font-size:120%"> 1.1 Methods </p>
+  <p style ="font-size:120%"> 1.1.1 Boolean </p>
+    <p> isalpha() will return true, if a string only consists of letters.</p>
+    <p> isalnum() will return true, if a string only consists of letters and numbers. </p>
+    <p> isdecimal() will return true, if a string only consists of numeric characters. </p>
+    <p> These are not the only methods that will return a boolean value. </p>
+    <p> The method islower() will return true, if all letters in the string are small.</p>
+    <p> On the other hand, the method isupper() will return true, if all letters in the string are capitalized.</p>
+    <p> The startswith() method will return true, if the referred string startswith the characters in the brackets startswith() method.</p>
+    <p> The exact opposite can be done with the endswith () method. </p>
+    <br>
+    <p style ="font-size:120%"> 1.1.2 Other </p>
+    <p> With the split method() you can split a string based on the argument of your method. </p>
+    <p> The join method allows you to a join string based on the argument of your method. </p>
+    <p> The lower() method converts a string into small letters. </p>
+    <p> The upper() method converts a string into capitalized letters. </p>
+    <br>
+    <p style ="font-size:120%"> 1.2 Cool tricks </p>
+    <p> If you want to comment out several lines of code, then you can add three quotation marks at the front and at the end of the code that you want to comment out.</p>
+    <p> With the double quotation marks you can solve the problem of adding a "s" to the end of a word. </p>
+    <p> If you wouldn't put double quotation marks at the front and end of your string, then Python would throw an error! </p>
+
+    <p> This was the last chapter of the basics of Python. I hope you liked it, my Pythonistas!</p>
+
+    <p> The two remaining chapters (Classes and Inheritance) are intermediate concepts. </p>
+   <br>
+
+    <p> <b> Example: </b> </p>
+
+    <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+    src="http://pythontutor.com/iframe-embed.html#code=new_employees_dictionary%20%3D%20%7B%7D%0A%0Anum_of_employees%20%3D%201%20%0A%0Awhile%20True%3A%0A%0A%0A%20%20%20%20user_input_name%20%3D%20input%28'Enter%20the%20name%20here%3A%20'%29%0A%20%20%20%20user_input_salary%20%3D%20input%28'Enter%20the%20salary%20here%3A%20'%29%0A%20%20%20%20user_input_password%20%3D%20input%28'Enter%20the%20password%20here%3A%20'%29%0A%0A%20%20%20%20if%20user_input_name.isalpha%28%29%3A%20%0A%20%20%20%20%20%20%20%20new_employees_dictionary%5B%22Name_%25i%22%20%25num_of_employees%5D%20%3D%20user_input_name%20%0A%0A%20%20%20%20if%20user_input_salary.isdecimal%28%29%3A%20%0A%20%20%20%20%20%20%20%20new_employees_dictionary%5B%22Salary_%25i%22%20%25num_of_employees%5D%20%3D%20user_input_salary%20%0A%0A%20%20%20%20if%20user_input_password.isalnum%28%29%3A%20%0A%20%20%20%20%20%20%20%20new_employees_dictionary%5B%22Password_%25i%22%20%25num_of_employees%5D%20%3D%20user_input_password%20%0A%0A%0A%20%20%20%20if%20user_input_name.isalpha%28%29%20and%20user_input_salary.isdecimal%28%29%20and%20user_input_password.isalnum%28%29%3A%20%0A%20%20%20%20%20%20%20%20print%20%28%22Thank%20you%20for%20following%20our%20corporate%20standards%20regarding%20new%20profiles%22%29%0A%20%20%20%20%20%20%20%20break%20%0A%0A%20%20%20%20else%3A%20%0A%20%20%20%20%20%20%20%20print%28%22Please%20follow%20our%20corporate%20standards%20about%20creating%20a%20new%20profile.%20%22%29%0A%0A%20%20%20%20num_of_employees%20%2B%3D%201%20%0A%0A%20%20%20%20print%28new_employees_dictionary%29%0A%0A%23------------------------------------------------------------------------------------------%0A%0Aname%20%3D%20'linus'%0A%0Aif%20name.islower%28%29%3A%20%0A%20%20%20%20print%20%28%22Worked%22%29%0A%0Aname_again%20%3D%20'LINUS'%0A%0Aif%20name_again.isupper%28%29%3A%20%0A%20%20%20%20print%20%28%22Worked%20again%22%29%0A%0Atelefon_number%20%3D%20%22%2B46%20771%20793%20336%22%0A%0Aif%20telefon_number.startswith%28%22%2B46%22%29%3A%0A%20%20%20%20print%20%28%22It%20starts%20with%20%2B46%22%29%0A%0Atelefon_number_again%20%3D%20%22%2B46%20771%20793%20337%22%0A%0Aif%20telefon_number_again.endswith%28%2237%22%29%3A%0A%20%20%20%20print%20%28%22Yes,%20the%20number%20ends%20with%2037%22%29%0A%0A%23-----------------------------------------------------------------------------------------%0A%0Alist_of_employees_and_ids%20%3D%20%5B'Linus','23','Kevin','24','Emiliano','25'%5D%0A%0Aprint%28%22_%22.join%28list_of_employees_and_ids%29%29%20%0A%0Arandom_string%20%3D%20%22I%20love%20food%22%0A%0Aprint%20%28random_string.split%28%22%20%22%29%29%0A%0Astring%20%3D%20'HIGH'%0A%0Aprint%28string.lower%28%29%29%20%0A%0Astring_new%20%3D%20'low'%0A%0Aprint%28string_new.upper%28%29%29%20%0A%0A%0A%23-----------------------------------------------------------------------------------------%0A%0A%22%22%22%20This%20will%20not%20be%20read%20by%20the%20interpreter.%0A%20%20%20%20I%20am%20able%20to%20write%20several%20lines%20of%20code%0A%20%20%20%20with%20this%20beautiful%20method.%20%22%22%22%0A%0Aprint%20%28%22This%20is%20Kevin's%20computer%22%29%0A%0A%23%20print%20%28'This%20is%20Kevin's%20computer'%29%20%23Comment%20it%20in%20to%20see%20the%20effect.&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+</iframe>
+
+    <p> PC:</p>
+
+    <p> <a href="Python Demonstration - String Processing.py"> Click on me </a> </p>
+
+
+</div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

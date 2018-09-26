@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: [col0] 300px [col1] 1fr [col2];
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidenav main";
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .sidenav {
+            grid-area: sidenav;
+            width: auto;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow: hidden;
+        }
+
+        .sidenav>div {
+            padding: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+        }
+
+        .sidenav button {
+            display: none;
+        }
+
+        .sidenav a:hover {
+            color: #064579;
+        }
+
+        .main {
+            grid-area: main;
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: #ffff4d;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                grid-template-columns: auto;
+                grid-template-rows: [row0] auto [row1] auto [row2];
+                grid-template-areas:
+                    "sidenav"
+                    "main";
+            }
+
+            .sidenav {
+                background: none;
+            }
+
+            .sidenav>div {
+                max-height: 0;
+                padding: 0 !important;
+                background: #eee;
+            }
+
+            .sidenav button {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <div id='sidenav-items'>
+            <a href="Fundamentals of Python.html">Fundamentals of Python</a>
+            <a href="Functions.html">Functions</a>
+            <a href="Conditions.html">Conditions</a>
+            <a href="Dictionaries.html">Dictionaries</a>
+            <a href="Lists.html">Lists</a>
+            <a href="String processing.html">String Processing</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Inheritance.html">Inheritance</a>
+            <a href="index.html">Main Menu</a>
+        </div>
+        <button class="button" onclick="toggleSidebar(this)">Sections</button>
+    </div>
+
+    <div class="main">
+        <h2 style = "text-align:center">Lists</h2>
+    <p> In this chapter we'll be covering lists in Python. </p>
+    <br>
+  <p style ="font-size:120%" > 1.1 Concept</p>
+    <p> Lists come in very handy when you're working with large chunks of data.</p>
+    <p> A list is essentially made up of one value: the list itself. </p>
+    <p> The list on the other hand has several values which are ordered and changeable. </p>
+    <p> The values in the list are called elements.</p>
+    <p> Lists begin and end with square brackets.</p>
+    <p> Every time you assign a list to a variable the elements in the list receive a value. </p>
+    <p> The leftmost element receives the index value zero and the rightmost element receives a positive index value depending on the number of elements in the list. </p>
+    <p> The values indicate the position of the element in the list and are called indices. </p>
+    <p> Indices start and end with square brackets just like lists do. </p>
+    <p> With the positive index you can now retrieve a specific element from the list. </p>
+    <p> It works like this: <b> name_l[i_num]. </b> </p>
+    <p> <b> Example: </b>list_a[0] &#8680; will get you the first element(leftmost) of list_a. </p>
+    <p> It is also possible to retrieve an element from a list with a negative index. </p>
+    <p> The rightmost element receives the index value minus 1 and the leftmost element receives a negative index value depending on the number of elements in the list. </p>
+    <p> <b> Example: </b>list_a[-1] &#8680; will get you the last element(rightmost) of list_a. </p>
+    <p> <b> Remember: The indices can only be integers! Using a different type will throw an error! </b></p>
+    <p> <b> Remember: Using an index number that surpasses the number of available indices in the list will throw an error!</b></p>
+    <br>
+    <p style ="font-size:120%" > 1.2 Manipulation </p>
+    <p> Slicing allows you to retrieve more than just an element from a list. </p>
+    <p> With an index value you can only retrieve one element from a list.</p>
+    <p> A slice also begins and ends with square brackets. </p>
+    <p> Slices are written as follows: name_l[i_n:i_n]</p>
+    <p> <b> Example: </b> list_a [0:3] &#8680; will get me the first three elements of list_a.</p>
+    <p> <b> Remember: </b> The third index will not be retrieved! Only index 0,1 and 2 will be returned.</p>
+    <p> If you want to change an already existing element in your list, then you can do this by referring to the element and adding the new value to this element. </p>
+    <p> <b> Example: </b> list_a[1]='Linus' &#8680; will change the second element in list_a to 'Linus'.</p>
+    <p> If you want to delete an element from a list, then you need to put del in front of the element that you want to delete.</p>
+    <p> <b> Example: </b> del list_a[1] &#8680; will delete the second element of list_a.</p>
+    <p> When working with lists you can also use for-loops!</p>
+    <p> You've probably heard of this concept in the conditions chapter, but I'll explain it again. </p>
+    <p> With the for-loop you can repeat everything inside the for-loop a defined number of times. </p>
+    <p> <b> Example: </b> for x in range (5):print(x) &#8680; will print: 0,1,2,3,4 (5 in total) </p>
+    <p> It is also possible to iterate (loop over) every element in a list. </p>
+    <p> <b> Example: </b> for x in list_a: print(x) &#8680; will print every element in list_a.  </p>
+    <p> Furthermore you can use the operators in and not in to check, if an element is a list or not. </p>
+    <p> <b> Example: </b> if 'Linus' in list_a: print('He's there) &#8680; it will print the print-statement, if the condition is true. </p>
+    <p> This example can also applied to the operator not in to see, if 'Linus' is not in the list. </p>
+    <br>
+    <p style ="font-size:120%"> 1.3 List vs Dict </p>
+    <p> Dictionaries are not sorted, hence dictionaries have no indices. That means that you can't retrieve one or more "values" with indices. </p>
+    <p> Lists on the other hand have indices that allow elements to be retrieved with indices. </p>
+    <p> Furthermore the order of the key-value pairs is not important, if you want to compare two lists for parity. </p>
+    <p> This is not the case when you're working with lists. </p>
+    <br>
+    <p style ="font-size:120%"> 1.4 Methods </p>
+    <p> Index: The index method allows you to search for the index value of an element. If the element is not in the list, then Python will throw an error! </p>
+  <p> <b> Remember: </b> If there are several same elements in a list, then the first occurring element will be returned.    </p>
+  <p> Append: The append method allows you to add an element to the end of the list. </p>
+  <p> Insert: The insert method allows you to add an element to a specific place in the list. </p>
+  <p> The insert method takes two arguments: the index value indicating the place where you want to add the value to the list and what you want to add to the list. </p>
+  <p> <b> Remember: </b> Append adds the element to the end of the list, whereas insert adds the element to a specific place in the list.</p>
+  <p> Remove: The remove method allows you to remove an element. It is also possible to remove an element with del, as we learned at the beginning of this chapter.</p>
+  <p> Sort: The sort method allows you to sort your list. </p>
+
+  <br>
+
+   <p> <b> Example: </b> </p>
+
+  <p> Mobile: </p>
+  <iframe width="200" height="400" frameborder="1"
+
+src="http://pythontutor.com/iframe-embed.html#code=%23%20Lists%0A%0Alist_a%20%3D%20%5B'Linus','Osama','Admira','Erik','Stina'%5D%0A%0Aprint%28list_a%5B0%5D%29%0Aprint%28list_a%5B-5%5D%29%0A%0Aprint%28list_a%5B4%5D%29%0Aprint%28list_a%5B-1%5D%29%0A%0A%0A%0A%0A%23-----------------------------------------------------------------------------------------------------------------------------%0A%0A%23%20List%20manipulation%0A%0Aprint%20%28list_a%5B0%3A2%5D%29%0A%0Alist_a%5B4%5D%20%3D%20'Kenneth'%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%20%28x%29%0A%0Adel%20list_a%5B0%5D%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%28x%29%0A%0A%23--------------------------------------------------------------------------------------------------------------------------%0A%0A%23%20Methods%20when%20working%20with%20lists%0A%0A%0Aprint%28list_a.index%28'Kenneth'%29%29%0A%0Alist_a.append%28'Kenneth'%29%0A%0Aprint%28list_a.index%28'Kenneth'%29%29%0A%0Alist_a.append%28'Sara'%29%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%28x%29%0A%0Alist_a.insert%281,'Jessica'%29%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%20%28x%29%0A%0Alist_a.remove%28'Admira'%29%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%28x%29%0A%0Alist_a.sort%28%29%0A%0Afor%20x%20in%20list_a%3A%0A%20%20%20%20print%28x%29%0A%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
+
+  </iframe>
+
+
+    <p> PC:</p>
+
+    <p> <a href="Python Demonstration - Lists.py"> Click on me </a> </p>
+
+
+
+</div>
+
+
+    </div>
+
+    <script>
+
+        function toggleSidebar(button) {
+            var sidenav = document.getElementById("sidenav-items");
+            // if not hidden, then hide
+            if (sidenav.style.maxHeight != "0px" && sidenav.style.maxHeight != "") {
+                sidenav.style.maxHeight = "0px";
+                button.innerHTML = "View Sections"
+            // else show
+            } else {
+                sidenav.style.maxHeight = "500px";
+                button.innerHTML = "Hide"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
