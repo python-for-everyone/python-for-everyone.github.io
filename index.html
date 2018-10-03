@@ -350,18 +350,11 @@ p.arial {
 .tabcontent {
     display: none;
 }
-
-.js div#preloader { 
-    position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; 
-    overflow: visible; background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center; 
-        }
 </style>
 
 </head>
 
 <body>
-    
-    <div id="preloader"></div>
     
     <nav>
         <div>
@@ -665,15 +658,6 @@ function playVideo() {
 function pauseVideo() {
   player.pauseVideo();
 };
-        
-jQuery(document).ready(function($) {  
-
-// site preloader -- also uncomment the div in the header and the css style for #preloader
-$(window).load(function(){
-	$('#preloader').fadeOut('slow',function(){$(this).remove();});
-});
-
-});
     </script>
 
 </body>
