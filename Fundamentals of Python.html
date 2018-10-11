@@ -111,11 +111,20 @@
                 display: block !important;
             }
         }
-        table { border-collapse: collapse; 
+       table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+       }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
         }
 
-        tr, td { padding: 0; 
-        }
+    tr:nth-child(even){background-color: #f2f2f2}
+        
     </style>
 </head>
 
@@ -147,7 +156,8 @@
     <p> <b> Example: </b>  2 + 2. </p>
     <p> The two values are the operands and the "+" sign is the operator. </p>
         <p style ="text-align:center" > <b> Table 1: </b>  <br> Possible operators. </br>  </p>
-
+    
+    <div style="overflow-x:auto;">
     <table align="center">
             <tr>
                 <th style="font-size:100%;text-align:center;background-color:#4caf50"> Operators </th>
@@ -175,13 +185,14 @@
                 <td style ="text-align:center;background-color:white;font-size:100%"> Subtraction = - </td>
             </tr>
         </table>
+    </div>
     <br>
 
     <p style ="font-size:120%" > 1.2 Data Types </p>
     <p> Every value in Python has a data type. </p>
 
-    <p style ="text-align:center" > <b> Table 2: </b>  <br> Common data types. </br>  </p>
-
+    <p style ="text-align:center" > <b> Table 2: </b>  <br> Common data types </br>  </p>
+    <div style="overflow-x:auto;">
     <table align="center">
             <tr>
                 <th style="font-size:100%;text-align:center;background-color:#4caf50"> Data Types </th>
@@ -198,6 +209,7 @@
             </tr>
              
         </table>
+</div>
 
 <p> You can recognize an <b> integer </b> by it's <b> whole number </b> (e.g. 3). </p>
     <p> On the other hand a <b> float number </b> can have <b> decimal places </b> (e.g. 3.14). <p> 
