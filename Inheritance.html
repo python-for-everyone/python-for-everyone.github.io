@@ -135,17 +135,16 @@
         <h2 style = "text-align:center"> Inheritance </h2>
   <p> In this chapter we'll be addressing inheritance. </p>
   <p> This is the true magic of object oriented programming.  </p>
-  <p> Inheritance allows you to reuse you code and to centrally maintain your code. </p>
+  <p> Inheritance allows you to reuse your code and to centrally maintain your code. </p>
     <p> I'll be using the same example as in the previous chapter, but a few minor changes might occur.</p>
-    <br>
     <p style ="font-size:120%"> 1.1 Concept </p>
     <p> Let me bring you a little closer to the concept of Data Encapsulation. </p>
-    <p> Data Encapsulation means that instances created in a specific class can only call methods in the same class as the instance.</p>
+    <p> <b> Data Encapsulation </b> means that instances created in a specific class can only call methods in the same class as the instance.</p>
     <p> These methods can in turn only access attribute values of objects that are "stored" in the same class. </p>
     <p> The attribute values of objects can only be "stored" if a constructor exists in the class. </p>
     <p> <b> Example: </b> If you create an instance in class A, then you can only access the methods in class A.</p>
     <p> If we would want to access the methods in Class B, then we would get an error. </p>
-    <p> <b> Remember: Classes are generally isolated (except for Inheritance). </b> </p>
+    <p> <img src="https://png.icons8.com/color/50/000000/high-priority.png"> Classes are generally isolated (except for Inheritance). </p>
     <br>
     <p style ="font-size:120%"> 1.2 Forms </p>
         <p style ="font-size:120%"> 1.2.1 Single </p>
@@ -165,8 +164,8 @@
     <p> Same Situation as before. </p>
     <p> We have a class called <b>Animal</b> and two subclasses called <b> Dog </b> and <b>Cat.</b> </p>
     <p> This time I'll be using different attributes for the subclasses!</p>
-    <p> Dog inherits from the class called <b> Animal</b> and in the <b>Dog</b> class we add an attribute and a method called Weight & get_Weight. </p>
-    <p> If we now want to have the same attributes and methods from the Dog class in our Cat class, then we need to inherit from our Dog class. </p>
+    <p> <b> Dog </b> inherits from the class called <b> Animal</b> and in the <b>Dog</b> class we add an attribute and a method called Weight & get_Weight. </p>
+    <p> If we now want to have the same attributes and methods from the <b> Dog </b> class in our <b> Cat class </b>, then we need to inherit from our <b> Dog </b> class. </p>
     <p> The approach is called Multi-level, because the <b> Cat </b> class inherits from the <b> Dog </b> class and the <b> Dog </b> class inherits from the <b>Animal</b> class.</p>
     <br>
     <p style ="font-size:120%"> 1.2.3 Multiple </p>
@@ -180,13 +179,13 @@
         <p> The class has the following attributes: Grade, Homeroom Teacher.
         <p> The class furthermore has the following methods: get_grade, get_homeroom_teacher. </p>
     <p> We now inherit from the Classes <b> Grades </b> and <b> Students </b>.</p>
-    <p> The approach is called Multiple inheritance, because we inherit from two classes at the same time. </p>
+    <p> The approach is called multiple inheritance, because we inherit from two classes at the same time. </p>
 
     <p> Multiple inheritance is used when the classes under each other don't relate, whereas multi-level inheritance is used when the classes under each relate. </p>
     <p> Example: It wouldn't make much sense for the class <b> Students </b> to inherit from <b>Grades</b>, because we only want to have the same attributes and methods of the two classes in one class called <b> Person. </b> </p>
 
     <p style ="font-size:120%"> 1.3 Polymorphy </p>
-    <p> Polymorphy is a fancy Greek word for two identical things with different manifestations. </p>
+    <p> <b> Polymorphy </b> is a fancy Greek word for two identical things with different manifestations. </p>
     <p> In Python that means that two methods that have the exact same name act differently in nature. </p>
 
   <br>
